@@ -410,7 +410,10 @@ Menu::Menu() {
             newMaxTextureMemory = MB_TO_BYTES(1024);
         } else if (MenuOption::RenderMaxTexture2048MB == text) {
             newMaxTextureMemory = MB_TO_BYTES(2048);
-        }
+		} else {
+			// assign default value
+			newMaxTextureMemory = MB_TO_BYTES(1024);
+		}
         gpu::Texture::setAllowedGPUMemoryUsage(newMaxTextureMemory);
     });
 
